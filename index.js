@@ -1,9 +1,10 @@
 const filepath = './placed.csv';
 const csv=require('csvtojson');
+const calculate = require('./functions');
 
 csv()
     .fromFile(filepath)
-    .then((jsonObj) => {
-        console.log(JSON.stringify(jsonObj, undefined, 4));
+    .then((list) => {
+        calculate.offers(list);
     });
 
