@@ -8,4 +8,6 @@ csv()
         calculate.offers(list);
         calculate.placed(list);
         calculate.doubleOffers(list);
+        calculate.aOneOffers(list);
+        calculate.aOnePlaced(list);
     });
