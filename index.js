@@ -7,4 +7,5 @@ csv()
     .then((list) => {
         calculate.offers(list);
         calculate.placed(list);
+        calculate.doubleOffers(list);
     });
