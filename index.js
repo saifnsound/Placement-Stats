@@ -12,4 +12,7 @@ csv()
         calculate.aOnePlaced(list);
         calculate.offersBatch(list);
         calculate.placedBatch(list);
+        calculate.mean(list);
+        calculate.median(list);
+        calculate.mode(list);
     });

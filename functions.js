@@ -24,7 +24,7 @@ var hashBatch = (students, branch) => {
         }
     }
     return map;
-} 
+}
 
 var offers = (students) => {
     console.log('\nTotal Offers:', students.length);
@@ -90,13 +90,58 @@ var offersBatch = (students) => {
 }
 
 var placedBatch = (students) => {
-    var map = hashBatch(students,'B.Tech');
+    var map = hashBatch(students, 'B.Tech');
     console.log('\n--- Placed ---');
     console.log('B.Tech', map.size);
-    var map = hashBatch(students,'M.Tech');
+    var map = hashBatch(students, 'M.Tech');
     console.log('M.Tech', map.size);
-    var map = hashBatch(students,'MscIT');
+    var map = hashBatch(students, 'MscIT');
     console.log('MscIT', map.size);
+};
+
+var mean = (students) => {
+    var sum = 0;
+    for (var i = 0; i < students.length; i++) {
+        sum = sum + Number(students[i].CTC, 10);
+    }
+    console.log('\nMean:', sum / students.length);
+};
+
+var median = (students) => {
+    var median = 0;
+    var arr = [];
+    for (var i = 0; i < students.length; i++) {
+        arr[i] = Number(students[i].CTC);
+    }
+    arr.sort();
+    if (students.length % 2 === 0) {
+        median = (arr[students.length / 2 - 1] + arr[students.length / 2]) / 2;
+    } else {
+        median = arr[(students.length - 1) / 2];
+    }
+    console.log('Median:', median);
+};
+
+var mode = (students) => {
+    var map = new hashmap();
+    for (var i = 0; i < students.length; i++) {
+        if (map.has(students[i].CTC)) {
+            var temp = map.get(students[i].CTC);
+            temp++;
+            map.set(students[i].CTC, temp);
+        } else {
+            map.set(students[i].CTC, 1);
+        }
+    }
+    var max = 0,
+        mode;
+    map.forEach((value, key) => {
+        if (value > max) {
+            max = value;
+            mode = key;
+        }
+    });
+    console.log('Mode:', mode);
 };
 
 module.exports = {
@@ -106,5 +151,8 @@ module.exports = {
     aOneOffers,
     aOnePlaced,
     offersBatch,
-    placedBatch
+    placedBatch,
+    mean,
+    median,
+    mode
 };
