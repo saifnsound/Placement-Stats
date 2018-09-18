@@ -13,7 +13,7 @@ var hashMap = (students) => {
 }
 
 var offers = (students) => {
-    console.log('Total Offers:', students.length);
+    console.log('\nTotal Offers:', students.length);
 };
 
 var placed = (students) => {
@@ -39,7 +39,7 @@ var aOneOffers = (students) => {
             count++;
         }
     }
-    console.log('A1 Offers:', count);
+    console.log('\nA1 Offers:', count);
 };
 
 var aOnePlaced = (students) => {
@@ -56,10 +56,30 @@ var aOnePlaced = (students) => {
     console.log('A1 Placed:', map.size);
 };
 
+var offersBatch = (students) => {
+    var btech = 0;
+    var mtech = 0;
+    var mscit = 0;
+    for (var i = 0; i < students.length; i++) {
+        if (students[i].Branch == 'B.Tech') {
+            btech++;
+        } else if (students[i].Branch == 'MscIT') {
+            mscit++;
+        } else {
+            mtech++;
+        }
+    }
+    console.log('\n--- Offers ---');
+    console.log('B.Tech', btech);
+    console.log('M.Tech', mtech);
+    console.log('MscIT', mscit);
+}
+
 module.exports = {
     offers,
     placed,
     doubleOffers,
     aOneOffers,
-    aOnePlaced
+    aOnePlaced,
+    offersBatch
 };

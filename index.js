@@ -10,4 +10,5 @@ csv()
         calculate.doubleOffers(list);
         calculate.aOneOffers(list);
         calculate.aOnePlaced(list);
+        calculate.offersBatch(list);
     });
