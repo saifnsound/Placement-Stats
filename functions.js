@@ -111,9 +111,11 @@ var median = (students) => {
     var median = 0;
     var arr = [];
     for (var i = 0; i < students.length; i++) {
-        arr[i] = Number(students[i].CTC);
+        arr[i] = parseFloat(students[i].CTC);
     }
-    arr.sort();
+    arr.sort(function (a, b) {
+        return a - b
+    });
     if (students.length % 2 === 0) {
         median = (arr[students.length / 2 - 1] + arr[students.length / 2]) / 2;
     } else {
