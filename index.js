@@ -11,4 +11,5 @@ csv()
         calculate.aOneOffers(list);
         calculate.aOnePlaced(list);
         calculate.offersBatch(list);
+        calculate.placedBatch(list);
     });
