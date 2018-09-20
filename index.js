@@ -5,6 +5,7 @@ const calculate = require('./functions');
 csv()
     .fromFile(filepath)
     .then((list) => {
+        calculate.companies(list);
         calculate.offers(list);
         calculate.placed(list);
         calculate.doubleOffers(list);

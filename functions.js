@@ -146,6 +146,14 @@ var mode = (students) => {
     console.log('Mode:', mode);
 };
 
+var companies = (students) => {
+    var set = new Set();
+    for(var i=0;i<students.length;i++) {
+        set.add(students[i].Company)
+    }
+    console.log('\nCompanies: ',set.size);
+}
+
 module.exports = {
     offers,
     placed,
@@ -156,5 +164,6 @@ module.exports = {
     placedBatch,
     mean,
     median,
-    mode
+    mode,
+    companies
 };
